@@ -1,0 +1,32 @@
+﻿<Window x:Class="ToDoListDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            
+        <ListView ItemsSource="{Binding ToDos}" SelectedItem="{Binding SelectedToDo}" Name="mylistView"
+                  SelectionChanged="mylistView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding Id}" >ID</GridViewColumn>
+                    <GridViewColumn Width="250" DisplayMemberBinding="{Binding TaskName}">Task Name</GridViewColumn>
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Status}">Status</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+           
+            <Button Height="50" Width="200" HorizontalAlignment="Right" Margin="20" Background="WhiteSmoke"
+                    FontSize="28" Foreground="DeepSkyBlue" FontWeight="ExtraBold" Content="Add Task"
+                   Click="Button_Click"
+                    ></Button>
+        </StackPanel>
+
+        
+
+    </Grid>
+</Window>
